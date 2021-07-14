@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:paws/screens/welcome/welcomescreen.dart';
+import 'constants.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,8 +14,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+          scaffoldBackgroundColor: Colors.white,
+          textTheme: TextTheme(
+            bodyText1: TextStyle(color: kTextColor),
+            bodyText2: TextStyle(color: kTextColor),
+          ),
+          visualDensity: VisualDensity.adaptivePlatformDensity),
       home: OnboardingScreen(),
     );
   }
