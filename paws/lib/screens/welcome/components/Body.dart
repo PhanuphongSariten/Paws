@@ -40,10 +40,31 @@ class _BodyState extends State<Body> {
                     text: splashData[index]["text"],
                   ),
                 )),
-            Expanded(flex: 2, child: SizedBox())
+            Expanded(
+                flex: 2,
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      children: List.generate(
+                        splashData.length,
+                        (index) => buildDot(),
+                      ),
+                    ),
+                  ],
+                ))
           ],
         ),
       ),
+    );
+  }
+
+  Container buildDot() {
+    return Container(
+      margin: EdgeInsets.only(right: 5),
+      height: 6,
+      width: 6,
+      decoration: BoxDecoration(
+          color: kPriColor, borderRadius: BorderRadius.circular(3)),
     );
   }
 }
