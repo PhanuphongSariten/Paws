@@ -15,7 +15,14 @@ class WelcomeContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Spacer(),
+        Image.asset(
+          image,
+          height: getProportionateScreenHeight(265),
+          width: getProportionateScreenWidth(235),
+        ),
+        Spacer(
+          flex: 1,
+        ),
         Text(
           "ニャン語",
           style: TextStyle(
@@ -29,14 +36,6 @@ class WelcomeContent extends StatelessWidget {
           style: TextStyle(
               fontSize: getProportionateScreenWidth(15), color: Colors.grey),
         ),
-        Spacer(
-          flex: 2,
-        ),
-        Image.asset(
-          image,
-          height: getProportionateScreenHeight(265),
-          width: getProportionateScreenWidth(235),
-        )
       ],
     );
   }

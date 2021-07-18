@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:paws/routs.dart';
 import 'package:paws/screens/welcome/welcomescreen.dart';
 import 'constants.dart';
 
@@ -20,7 +20,10 @@ class MyApp extends StatelessWidget {
             bodyText2: TextStyle(color: kTextColor),
           ),
           visualDensity: VisualDensity.adaptivePlatformDensity),
-      home: OnboardingScreen(),
+      //home: OnboardingScreen(),
+      // We use routeName so that we dont need to remember the name
+      initialRoute: OnboardingScreen.routeName,
+      routes: routes,
     );
   }
 }
