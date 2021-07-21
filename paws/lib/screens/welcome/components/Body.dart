@@ -7,6 +7,8 @@ import 'package:paws/constants.dart';
 
 import '../../../constants.dart';
 
+import 'package:get/get.dart';
+
 class Body extends StatefulWidget {
   @override
   _BodyState createState() => _BodyState();
@@ -71,7 +73,9 @@ class _BodyState extends State<Body> {
                       Spacer(),
                       BorderDefaultButton(
                         text: "I ALREADY HAVE AN ACCOUNT",
-                        press: () {},
+                        press: () {
+                          Get.toNamed('/second');
+                        },
                       ),
                       Spacer(),
                     ],
