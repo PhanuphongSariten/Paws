@@ -68,13 +68,15 @@ class _BodyState extends State<Body> {
                       ),
                       DefaultButton(
                         text: "GET STARTED",
-                        press: () {},
+                        press: () {
+                          Get.toNamed('/sign_in_screen');
+                        },
                       ),
                       Spacer(),
                       BorderDefaultButton(
                         text: "I ALREADY HAVE AN ACCOUNT",
                         press: () {
-                          Get.toNamed('/second');
+                          Get.toNamed('/login_screen');
                         },
                       ),
                       Spacer(),
