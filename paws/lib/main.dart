@@ -1,34 +1,30 @@
 import 'package:flutter/material.dart';
 
-import 'package:paws/routs.dart';
+import 'package:paws/screens/home/learning_screen.dart';
+import 'package:paws/screens/home/test/test_screen.dart';
+import 'package:paws/screens/login/login_screen.dart';
+import 'package:paws/screens/pet/pet_screen.dart';
+import 'package:paws/screens/profile/profile_screen.dart';
 import 'package:paws/screens/sign_in/sign_in_screen.dart';
-import 'package:paws/screens/welcome/components/welcomecontent.dart';
-import 'package:paws/screens/welcome/welcomescreen.dart';
-import 'constants.dart';
+import 'package:paws/screens/welcome/onboarding_screen.dart';
 
 import 'package:get/get.dart';
-import 'package:get/get_navigation/src/routes/default_transitions.dart';
 
 void main() {
   runApp(GetMaterialApp(
-    // It is not mandatory to use named routes, but dynamic urls are interesting.
-    initialRoute: '/home',
+    debugShowCheckedModeBanner: false,
     defaultTransition: Transition.native,
     getPages: [
-      //Simple GetPage
-      GetPage(name: '/home', page: () => OnboardingScreen()),
-      // GetPage with custom transitions and bindings
       GetPage(
-        name: '/second',
-        page: () => SignInScreen(),
-        customTransition: SizeTransitions(),
-      ),
-      // GetPage with default transitions
-      /*GetPage(
-        name: '/third',
-        transition: Transition.cupertino,
-        page: () => Third(),
-      ),*/
+          name: '/sign_in_screen',
+          page: () => SignInScreen(),
+          customTransition: SizeTransitions()),
+      GetPage(name: '/login_screen', page: () => LoginScreen()),
+      GetPage(name: '/onboarding_screen', page: () => OnboardingScreen()),
+      GetPage(name: '/learning_screen', page: () => LearningScreen()),
+      GetPage(name: '/pet_screen', page: () => PetScreen()),
+      GetPage(name: '/profile_screen', page: () => ProfileScreen()),
+      GetPage(name: '/test_screen', page: () => TestScreen()),
     ],
   ));
 }
